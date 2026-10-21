@@ -6,22 +6,59 @@
     <title>Reservas | Rueda Libre</title>
 </head>
 <body>
+    <header>
     <h1>Reservas de Rueda Libre</h1>
     <p>Realiza tu reserva de bicicletas y recorridos guiados en Rueda Libre de manera rápida y sencilla.</p>
     <img src="../img/logo-bicicletas.jpeg" alt="Logo de Rueda Libre" width="150">
+    
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="tarifas.html">Tarifas</a></li  >
             <li><a href="reservas.html">Reservas</a></li>
         </ul>
-    </nav>  
+    </nav>
+    </header>
 
+    <main>
     <p> Hola, bienvenido a la página de reservas de Rueda Libre.</p>
-    <p>Para realizar una reserva, por favor mandanos un correo electrónico a <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.</p>
-    <p> Recuerda que nuestro horario de atención es de  lunes a viernes de 7:00 a. m. a 7:00 p. m.; sábados, domingos y festivos de 6:00 a. m. a 2:00 p. m.</p>
-<footer>
+    <!-- <p>Para realizar una reserva, por favor mandanos un correo electrónico a <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.</p> -->
+    <!-- <p> Recuerda que nuestro horario de atención es de  lunes a viernes de 7:00 a. m. a 7:00 p. m.; sábados, domingos y festivos de 6:00 a. m. a 2:00 p. m.</p> -->
+    <p>Para realizar una reserva, por favor completa el siguiente formulario.</p>
+    
+    <section id="formulario-reserva">
+        <h2>Formulario de Reserva</h2>
+        <br action="procesar_reserva.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br></br>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br></br>
+
+            <label for="fecha">Fecha de la reserva:</label>
+            <input type="date" id="fecha" name="fecha" required><br></br>
+
+            <label for="hora">Hora de la reserva:</label>
+            <input type="time" id="hora" name="hora" required><br></br>
+
+            <label for="tipo-reserva">Tipo de reserva:</label>
+            <select id="tipo-reserva" name="tipo-reserva" required><br></br>
+                <option value="">Seleccione una opción</option>
+                <option value="bicicleta">Bicicleta</option>
+                <option value="recorrido-guiado">Recorrido Guiado</option>
+            </select>
+
+            
+
+            <button type="submit">Enviar Reserva</button>
+        </form>
+
+
+
+    </main>
+    <footer>
         <p>Rueda Libre | 2026 | <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
     </footer>
+
 </body>
 </html>
