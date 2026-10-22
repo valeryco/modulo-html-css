@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas | Rueda Libre</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <header>
+    <h1>Reservas de Rueda Libre</h1>
+    <p>Realiza tu reserva de bicicletas y recorridos guiados en Rueda Libre de manera rápida y sencilla.</p>
+    <img src="../img/logo-bicicletas.jpeg" alt="Logo de Rueda Libre" width="150">
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="tarifas.html">Tarifas</a></li  >
+            <li><a href="reservas.html">Reservas</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+    <p> Hola, bienvenido a la página de reservas de Rueda Libre.</p>
+    <!-- <p>Para realizar una reserva, por favor mandanos un correo electrónico a <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a>.</p> -->
+    <!-- <p> Recuerda que nuestro horario de atención es de  lunes a viernes de 7:00 a. m. a 7:00 p. m.; sábados, domingos y festivos de 6:00 a. m. a 2:00 p. m.</p> -->
+    <p>Para realizar una reserva, por favor completa el siguiente formulario.</p>
+    
+    <section id="formulario-reserva">
+        <h2>Formulario de Reserva</h2>
+        <form action="procesar_reserva.php" method="post">
+            <fieldset>
+                <legend>Tus Datos</legend>
+            <label for="nombre">Nombre Completo:</label>
+            <input type="tel" id="nombre" name="nombre" required minlength="3"><br></br>
+
+            <label for="documento">Número de documento:</label>
+            <input type="text" id="documento" name="documento" required minlength="6" maxlength="10" placeholder="Ej. 1020304050"><br></br>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br></br>
+
+            <label for="celular">Celular:</label>
+            <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" placeholder="Ej. 3001234567"><br></br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Detalles de la Reserva</legend>
+
+            <label for="fecha">Fecha del alquiler</label>
+            <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31"><br></br>
+            
+            <label for="tipo-bicicleta">Tipo de bicicleta</label>
+            <select id="tipo-bicicleta" name="tipo-bicicleta" required><br></br>
+                <option value="">Seleccione una opción</option>
+                <option value="urbana">Bicicleta Urbana</option>
+                <option value="montana">Bicicleta de Montaña</option>
+                <option value="electrica">Bicicleta Eléctrica</option>
+            </select><br></br>
+
+            <label for="plan">Plan</label>
+            <select id="plan" name="plan" required><br></br>
+                <option value="">Seleccione una opción</option>
+                <option value="1-hora">1 Hora</option>
+                <option value="medio-dia">Medio Día (4h)</option>
+                <option value="dia-completo">Día Completo</option>
+                <option value="recorrido-guiado">Recorrido Guiado</option>
+            </select><br></br>
+
+            <label for="recorrido-guiado">Recorrido guiado (si aplica)</label>
+            <select id="recorrido-guiado" name="recorrido-guiado"><br></br>
+                <option value="">Seleccione una opción</option>
+                <option value="rio-parques">Rio y parques</option>
+                <option value="sabores-barrios">Sabores de barrios</option>
+                <option value="reto-palmas">Reto Las Palmas</option>
+            </select><br></br>
+
+            <label for="cantidad-bicicletas">Cantidad de bicicletas</label>
+            <input type="number" id="cantidad-bicicletas" name="cantidad-bicicletas" required min="1" max="6"><br></br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Confirmación</legend>
+            <label for="comentarios">Comentarios adicionales</label>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="300" placeholder="Escribe aquí cualquier comentario adicional..."></textarea><br></br>
+
+            <input type="checkbox" id="terminos" name="terminos" required>
+            <label for="terminos">Acepto los términos y condiciones</label><br></br>
+            </fieldset>
+
+
+            <button type="submit">Enviar Reserva</button>
+        </form>
+
+
+
+    </main>
+    <footer>
+        <p>Rueda Libre | 2026 | <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+    </footer>
+
+</body>
+</html>
