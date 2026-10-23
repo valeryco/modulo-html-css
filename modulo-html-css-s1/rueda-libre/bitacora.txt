@@ -60,20 +60,7 @@ Las WCAG piden una relación de contraste mínima de 4.5:1 para el texto normal 
 
 *Texto blanco sobre Azul Noche. Contrast Ratio 15.97:1, Normal text pass, Large text pass
 
-##clasificacion de combinaciones 
-Aptas para texto normal (Cumplen con el nivel AA para texto normal y grande, al superar el ratio de 4.5:1):
-
-    Texto blanco sobre Verde Ruta (Ratio: 5.31:1)
-
-    Texto Azul Noche sobre Naranja Pedal (Ratio: 7.2:1) — Nota: El Naranja Pedal no sirve de fondo para texto blanco, pero sí funciona perfectamente si el texto es Azul Noche.
-
-    Texto Azul Noche sobre Crema (Ratio: 14.82:1)
-
-    Texto Gris Asfalto sobre Crema (Ratio: 5.56:1)
-
-    Texto Verde Ruta sobre Crema (Ratio: 4.93:1)
-
-    Texto blanco sobre Azul Noche (Ratio: 15.97:1)
+##clasificacion de combinaciones
 
 Aptas solo para texto grande:
 
