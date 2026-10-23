@@ -1,46 +1,127 @@
-/* Variables de la paleta del cliente */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Open+Sans:ital@0;1&display=swap');
+
 :root {
-  --verde-ruta: #1E7A4F;
-  --naranja-pedal: #F39A2B;
-  --azul-noche: #14213D;
-  --crema: #FAF6EF;
-  --gris-asfalto: #5B6470;
+  /* Color Primario: Azul Noche (Para elementos principales, títulos y fondos oscuros) */
+  --color-primario: #14213D;
+
+  /* Color Secundario: Verde Ruta (Para enlaces y elementos interactivos secundarios) */
+  --color-secundario: #1E7A4F;
+
+  /* Color de Acento: Naranja Pedal (Estrictamente para contenedores de alerta o llamadas de atención / CTA) */
+  --color-acento: #F39A2B;
+
+  /* Color de Fondo General: Crema (Base suave para toda la página) */
+  --color-fondo: #FAF6EF;
+
+  /* Colores de Apoyo y Texto */
+  --color-texto-principal: #14213D;  
+  --color-texto-secundario: #5B6470;   /* Gris Asfalto para textos menos pesados */
+  --color-blanco: #FFFFFF;             /* Blanco puro para tarjetas y textos sobre oscuro */
+
+  /* Tipografía */
+  --fuente-titulos: Montserrat;
+  --fuente-cuerpo: Open Sans;
 }
 
-/* Fondo general de la página y texto secundario */
+/* =================================================================
+   2. RESET Y ESTILOS BASE
+   ================================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: var(--crema);
-  color: var(--gris-asfalto);
-  font-family: Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto-secundario);
+  font-family: var(--fuente-cuerpo);
   margin: 0;
   padding: 20px;
+  line-height: 1.6;
 }
 
-/* Títulos en Azul Noche */
-h1, h2, h3, legend {
-  color: var(--azul-noche);
+/* Títulos aplicando el Color Primario */
+h1 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-blanco);
 }
 
-/* Enlaces generales */
+h2, h3, h4, h5, h6, legend {
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario);
+}
+
+/* =================================================================
+   3. ENLACES (LINKS)
+   ================================================================ */
 a {
-  color: var(--verde-ruta);
+  color: var(--color-secundario); /* Usa el color secundario (Verde Ruta) que cumple con el contraste */
   font-weight: bold;
+  text-decoration: underline;
 }
 
-/* Botón principal de enviar en Verde Ruta con texto blanco */
-button[type="submit"] {
-  background-color: var(--verde-ruta);
-  color: #FFFFFF;
+a:hover,
+a:focus {
+  opacity: 0.8;
+}
+
+/* =================================================================
+   4. SECCIONES OSCURAS (Header, Footer)
+   ================================================================ */
+header, footer {
+  background-color: var(--color-primario); /* Fondo con color primario */
+  color: var(--color-blanco);              /* Texto blanco (Excelente contraste de 15.97:1) */
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+header a, footer a {
+  color: var(--color-blanco);
+}
+
+/* =================================================================
+   5. CONTENEDORES DE ACENTO (Naranja Pedal)
+   ================================================================ */
+.contenedor-acento {
+  background-color: var(--color-acento); /* Fondo con color de acento */
+  color: var(--color-primario);          /* Texto obligatorio en color primario para cumplir accesibilidad */
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* =================================================================
+   6. BOTONES (Componentes Interactivos)
+   ================================================================ */
+/* Botón Principal: Fondo primario con texto blanco */
+button[type="submit"], .btn-principal {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
 }
 
-/* Borde decorativo para los fieldset del formulario */
+/* Botón Secundario: Fondo de acento con texto en color primario */
+.btn-secundario {
+  background-color: var(--color-acento);
+  color: var(--color-primario);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* =================================================================
+   7. FORMULARIOS Y TARJETAS
+   ================================================================ */
 fieldset {
-  border: 2px solid var(--azul-noche);
+  border: 2px solid var(--color-primario); /* Borde con color primario */
   border-radius: 8px;
-  background-color: #FFFFFF;
+  background-color: var(--color-blanco);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
