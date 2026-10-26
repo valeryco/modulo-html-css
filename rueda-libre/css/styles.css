@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Open+Sans:ital@0;1&display=swap');
+
+/*===============================================================
+   1. VARIABLES Y CONFIGURACIÓN INICIAL (:root)
+   ================================================================ */
+
+:root {
+  /* Color Primario: Azul Noche (Para elementos principales, títulos y fondos oscuros) */
+  --color-primario: #14213D;
+
+  /* Color Secundario: Verde Ruta (Para enlaces y elementos interactivos secundarios) */
+  --color-secundario: #1E7A4F;
+
+  /* Color de Acento: Naranja Pedal (Estrictamente para contenedores de alerta o llamadas de atención / CTA) */
+  --color-acento: #F39A2B;
+
+  /* Color de Fondo General: Crema (Base suave para toda la página) */
+  --color-fondo: #FAF6EF;
+
+  /* Colores de Apoyo y Texto */
+  --color-texto-principal: #14213D;  
+  --color-texto-secundario: #5B6470;   /* Gris Asfalto para textos menos pesados */
+  --color-blanco: #FFFFFF;             /* Blanco puro para tarjetas y textos sobre oscuro */
+
+  /* Tipografía */
+  --fuente-titulos: Montserrat, "arial black", "trebuchet ms";
+  --fuente-cuerpo: Open Sans, "segoe ui", "helvetica neue", sans-serif;
+}
+
+/* =================================================================
+   2. RESET Y ESTILOS BASE (Box Model Universal)
+   ================================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto-secundario);
+  font-family: var(--fuente-cuerpo);
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.contenedor-principal{
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Títulos aplicando el Color Primario */
+h1 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-blanco);
+}
+
+h2, h3, h4, h5, h6, legend {
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario);
+}
+
+/* =================================================================
+   3. SECCIONES DE PORTADA (Hero / Altura en vh)
+   ================================================================ */
+.portada {
+  min-height:  75vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* =================================================================
+   4. NAVEGACION Y MENU
+   ================================================================ */
+#menu {
+  list-style:none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#menu li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+#menu a {
+  color: var(--color-texto-secundario); /* Gris Asfalto para enlaces del menú */
+  text-decoration: none;
+  transition: var(--color-acento) 0.2s ease;
+}
+
+/*solucion al conflicto: ID + etiqueta + clase */
+#menu a.activo {
+  color: var(--color-secundario); /* Color secundario puro para el enlace activo */
+  font-weight: 600;
+}
+
+/*cuando el usuario pasa el mouse por encima del enlace, cambia el fondo a un gris claro para indicar interactividad*/
+#menu a:hover {
+  color: var(--color-secundario);
+  opacity: 0.8;
+}
+
+/*cuando el usuario navega con la tecla tab y se posa en el enlace*/
+#menu a:focus {
+  outline: 2px solid var(--color-secundario);
+  outline-offset:3px;
+  border-radius: 2px;
+}
+/* =================================================================
+   5. ENLACES GENERALES (Links fuera del menú)
+   ================================================================ */
+a {
+  color: var(--color-secundario); /* Usa el color secundario (Verde Ruta) que cumple con el contraste */
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  opacity: 0.8;
+}
+
+/* =================================================================
+   6.SECCIONES OSCURAS (Header, Footer)
+   ================================================================ */
+header, footer {
+  background-color: var(--color-primario); /* Fondo con color primario */
+  color: var(--color-blanco);              /* Texto blanco (Excelente contraste de 15.97:1) */
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+header a, footer a {
+  color: var(--color-blanco);
+}
+
+/* =================================================================
+   7. TARJETAS DE SERVICIOS (Espaciado en rem, imágenes en %)
+   ================================================================ */
+#servicios h2 {
+  margin-bottom: 1.5rem;
+}
+
+.contenedor-tarjetas {
+  display:flex;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+
+.tarjeta-servicio {
+    background-color:var(--color-blanco);
+    border: 1px solid var(--color-texto-secundario);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    flex:1;
+    min-width:220px
+   }
+.tarjeta-servicio img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom:1 rem;
+  display: block;
+}
+/* =================================================================
+   8. TABLAS (Lectura mejorada y alto contraste)
+   ================================================================ */
+table {
+  width: 100%;
+  border-collapse:collapse;
+  margin: 2rem 0;
+}
+th, td {
+  padding: 1rem;
+  border: 4piz solid var(--color-texto-secundario);
+  text-align: left
+}
+th {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  font-family: var(--fuente-titulos);
+}
+
+/* =================================================================
+   9.CONTENEDORES DE ACENTO (Naranja Pedal)
+   ================================================================ */
+.contenedor-acento {
+  background-color: var(--color-acento); /* Fondo con color de acento */
+  color: var(--color-primario);          /* Texto obligatorio en color primario para cumplir accesibilidad */
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+/* =================================================================
+   10. FORMULARIOS Y ACCESIBILIDAD DE FOCO
+   ================================================================ */
+fieldset {
+  border: 2px solid var(--color-primario); /* Borde con color primario */
+  border-radius: 8px;
+  background-color: var(--color-blanco);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--color-primario);
+}
+
+input,
+select,
+textarea {
+  font-family: var(--fuente-cuerpo);
+  font-size: 16px;
+  padding: 0.8rem;
+  border: 1px solid var(--color-texto-secundario);
+  border-radius: 4px;
+  background-color: var(--color-blanco);
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid var(--color-secundario);
+  box-shadow: 0 0 5px rgba(30, 122, 79, 0.4);
+}
+
+p.grupo-terminos {
+  display: flez;
+  align-items:center;
+  gap:0.5rem;
+  margin-bottom:1.5rem;
+}
+
+p.grupo-terminos input[type="checkbox"] {
+  width:auto;
+  margin-bottom: 0;
+}
+
+P.grupo-terminos label {
+  display:inline;
+  margin-bottom:0;
+  font-weight: normal;
+}
+/* =================================================================
+   11. BOTONES (Componentes Interactivos y CTA)
+   ================================================================ */
+button[type="submit"],
+.btn.principal {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  border:none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display:inline-block;
+}
+
+.btn-secundario {
+  background-color: var(--color-acento);
+  color: var(--color-primario);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn-reservar {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  padding: 0.8rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+  transition: transform 0.2s ease, backgrund-color 0.2s ease;
+}
+
+.btn-reservar:hover {
+  opacity: 0.9;
+  background-color: #145c3b;
+}
+
+.btn-reservar:focus {
+  outline: 3px solid var(--color-primario);
+  outline-offset: 2px;
+}
+/* =================================================================
+   12. POSICIONAMIENTO FINAL (Etiqueta Nuevo y WhatsApp Flotante)
+   ================================================================ */
+
+/* Contenedor de referencia para la etiqueta absoluta */
+.tarjeta-destacada {
+  position: relative;
+}
+
+/* etiqueta "nuevo"*/
+.etiqueta-nuevo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--color-acento);
+  font-family: var(--fuente-titulos);
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  z-index:10;
+}
