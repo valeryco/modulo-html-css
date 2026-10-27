@@ -13,10 +13,10 @@
     <img src="../img/logo-bicicletas.png" alt="Logo de Rueda Libre" width="150">
     
     <nav>
-        <ul>
+        <ul id="menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="tarifas.html">Tarifas</a></li  >
-            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="reservas.html" class="activo">Reservas</a></li>
         </ul>
     </nav>
     </header>
@@ -85,13 +85,21 @@
             <label for="comentarios">Comentarios adicionales</label>
             <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="300" placeholder="Escribe aquí cualquier comentario adicional..."></textarea><br></br>
 
-            <input type="checkbox" id="terminos" name="terminos" required>
-            <label for="terminos">Acepto los términos y condiciones</label><br></br>
+            <p class="grupo-terminos">
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos">Acepto los términos y condiciones</label><br></br>
+            </p>
             </fieldset>
 
 
-            <button type="submit">Enviar Reserva</button>
+            <button type="submit" class="btn-principal">Enviar Reserva</button>
         </form>
+
+    <section id="reserva">
+        <h2>Reserva ahora</h2>
+        <a href="https://wa.me/573000000000?text=Hola,%20quiero%20hacer%20una%20reserva" class="btn-reservar" target="_blank">Reservar por WhatsApp</a>
+        </section>
+        
     </section>
     </main>
     <footer>

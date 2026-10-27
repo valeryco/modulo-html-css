@@ -15,15 +15,15 @@
         <img src="../img/logo-bicicletas.png" alt="Logo de Rueda Libre" width="150">
 
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
+            <ul id="menu">
+                <li><a href="index.html" class="activo">Inicio</a></li>
                 <li><a href="tarifas.html">Tarifas</a></li>
                 <li><a href="reservas.html">Reservas</a></li>
             </ul>
         </nav>
         </header>
     
-    <main>
+    <main class="contenedor principal"
         <section id="quienes-somos">
             <h2>¿Quiénes somos?</h2>
             <p>Rueda Libre es un negocio dedicado al alquiler de bicicletas, ofreciendo una experiencia única para explorar la ciudad y la naturaleza de manera sostenible. Si quieres visitarnos en nuestra tienda física, consulta la sección  <a href="#encuentranos">Encuéntranos</a>.</p>
@@ -32,17 +32,30 @@
         <section id="servicios">
         <h2>Nuestros Servicios</h2>
 
-        <article>
+        <section class="contenedor-tarjetas">
+            <article class="tarjeta-servicio tarjeta-destacada">
+            <span class="etiqueta-nuevo">Nuevo</span>
+            <h3>Alquiler de biciletas eléctricas</h3>
+            <p>Explora la ciudad sin esfuerzo con nuestras nuevas bicicletas.</p>
+            <img src="../img/bicicletas-electricas.png" alt="Bicicletas electricas" width="250">
+        </article>
+
+        <article class="tarjeta-servicio">
             <h3>Alquiler de bicicletas</h3>
             <p>Ofrecemos bicicletas urbanas y de montaña ajustadas a tus necesidades.</p>
+            <img src="../img/bicicleta.jpg" alt="Alquiler de Bicicleta" width="250">
         </article>
-        <article>
+        
+        <article class="tarjeta-servicio">
             <h3>Rutas guiadas por la ciudad</h3>
             <p>Recorridos acompañados por guías locales para conocer los mejores sitios de la ciudad.</p>
+            <img src="../img/rutas-guiadas.jpg" alt="rutas guiadas en bicicleta" width="250">
         </article>
-        <article>
+        
+        <article class="tarjeta-servicio">
             <h3>Reparación y mantenimiento de bicicletas</h3>
             <p>Servicio técnico rápido para poner a punto tu propia bicicleta.</p>
+            <img src="../img/taller-bicicletas.jpg" alt="taller bicicletas" width="250">
         </article>
         </section>
 
@@ -54,7 +67,6 @@
                 <li>Selecciona el tiempo de uso </li>
                 <li>Añade extras si lo deseas y empieza a rodar!</li>
             </ol>
-            <img src="../img/bicicleta.jpg" alt="Alquiler de Bicicleta" width="290">
         </section>
 
         <section id="beneficios">
@@ -78,7 +90,7 @@
 
         <section id="reserva">
         <h2>Reserva ahora</h2>
-        <a href="https://wa.me/573053816658" target="_blank">Escríbenos por WhatsApp</a>
+        <a href="https://wa.me/573000000000?text=Hola,%20quiero%20hacer%20una%20reserva" class="btn-reservar" target="_blank">Reservar por WhatsApp</a>
         </section>
 
     </main>
