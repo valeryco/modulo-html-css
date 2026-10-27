@@ -181,7 +181,7 @@ table {
 }
 th, td {
   padding: 1rem;
-  border: 4piz solid var(--color-texto-secundario);
+  border: 4px solid var(--color-texto-secundario);
   text-align: left
 }
 th {
@@ -239,7 +239,7 @@ textarea:focus {
 }
 
 p.grupo-terminos {
-  display: flez;
+  display: flex;
   align-items:center;
   gap:0.5rem;
   margin-bottom:1.5rem;
@@ -250,7 +250,7 @@ p.grupo-terminos input[type="checkbox"] {
   margin-bottom: 0;
 }
 
-P.grupo-terminos label {
+p.grupo-terminos label {
   display:inline;
   margin-bottom:0;
   font-weight: normal;
@@ -301,7 +301,7 @@ button[type="submit"],
   display: flex;
   align-items: center;
   gap:0.5rem;
-  transition: transform 0.2s ease, backgrund-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-reservar:hover {
