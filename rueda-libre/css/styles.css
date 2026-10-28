@@ -351,7 +351,7 @@ button[type="submit"],
   outline-offset: 2px;
 }
 /* =================================================================
-12. DISEÑO RESPONSIBLE
+12. DISEÑO RESPONSIVE
    ================================================================ */
 @media(max-width: 768px) {
   .contenedor-tarjetas {
