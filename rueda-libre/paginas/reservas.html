@@ -29,43 +29,44 @@
         </section>
         </header>
 
-    <main>
+    <main class="contenedor-principal">
     <p> Hola, bienvenido a la página de reservas de Rueda Libre.</p>
     <p>Para realizar una reserva, por favor completa el siguiente formulario.</p>
+    <h2>Formulario de Reserva</h2>
     
     <section id="formulario-reserva">
-        <h2>Formulario de Reserva</h2>
         <form action="procesar_reserva.php" method="post">
-            <fieldset>
+            <aside>Todas las tarifas incluyen casco y candado. Los recorridos salen sábados y domingos a las 7:00 a. m. Qué llevar: ropa cómoda, agua, protector solar y documento de identidad</aside><br>
+                <fieldset>
                 <legend>Tus Datos</legend>
             <label for="nombre">Nombre Completo:</label>
-            <input type="tel" id="nombre" name="nombre" 
-            required minlength="3"><br></br>
+            <input type="text" id="nombre" name="nombre" 
+            required minlength="3">
 
             <label for="documento">Número de documento:</label>
-            <input type="text" id="documento" name="documento" 
-            required minlength="6" maxlength="10" placeholder="Ej. 1020304050" title="Sólo números, entre 6 y 10 digitos"><br></br>
+            <input type="tel" id="documento" name="documento" 
+            required minlength="6" maxlength="10" placeholder="Ej. 1020304050" title="Sólo números, entre 6 y 10 digitos">
 
             <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required><br></br>
+            <input type="email" id="email" name="email" required>
 
             <label for="celular">Celular:</label>
-            <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" placeholder="Ej. 3001234567"><br></br>
+            <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" placeholder="Ej. 3001234567">
             </fieldset>
 
             <fieldset>
                 <legend>Detalles de la Reserva</legend>
 
             <label for="fecha">Fecha del alquiler</label>
-            <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31"><br></br>
+            <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31">
             
             <label for="tipo-bicicleta">Tipo de bicicleta</label>
-            <select id="tipo-bicicleta" name="tipo-bicicleta" required><br></br>
+            <select id="tipo-bicicleta" name="tipo-bicicleta" required>
                 <option value="">Seleccione una opción</option>
                 <option value="urbana">Bicicleta Urbana</option>
                 <option value="montana">Bicicleta de Montaña</option>
                 <option value="electrica">Bicicleta Eléctrica</option>
-            </select><br></br>
+            </select>
 
             <label for="plan">Plan</label>
             <select id="plan" name="plan" required><br></br>
@@ -74,36 +75,38 @@
                 <option value="medio-dia">Medio Día (4h)</option>
                 <option value="dia-completo">Día Completo</option>
                 <option value="recorrido-guiado">Recorrido Guiado</option>
-            </select><br></br>
+            </select>
 
             <label for="recorrido-guiado">Recorrido guiado (si aplica)</label>
-            <select id="recorrido-guiado" name="recorrido-guiado"><br></br>
+            <select id="recorrido-guiado" name="recorrido-guiado">
                 <option value="">Seleccione una opción</option>
                 <option value="rio-parques">Rio y parques</option>
                 <option value="sabores-barrios">Sabores de barrios</option>
                 <option value="reto-palmas">Reto Las Palmas</option>
-            </select><br></br>
+            </select>
 
             <label for="cantidad-bicicletas">Cantidad de bicicletas</label>
-            <input type="number" id="cantidad-bicicletas" name="cantidad-bicicletas" required min="1" max="6"><br></br>
+            <input type="number" id="cantidad-bicicletas" name="cantidad-bicicletas" required min="1" max="6">
             </fieldset>
 
             <fieldset>
                 <legend>Confirmación</legend>
             <label for="comentarios">Comentarios adicionales</label>
-            <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="300" placeholder="Escribe aquí cualquier comentario adicional..."></textarea><br></br>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="300" placeholder="Escribe aquí cualquier comentario adicional..."></textarea>
 
             <p class="grupo-terminos">
                 <input type="checkbox" id="terminos" name="terminos" required>
-                <label for="terminos">Acepto los términos y condiciones</label><br></br>
+                <label for="terminos">Acepto los términos y condiciones</label>
+
             </p>
-            </fieldset>
+            </fieldset></section>
+            </article>
+
 
 
             <button type="submit" class="btn-principal">Enviar Reserva</button>
         </form>
-
-    <section id="reserva">
+        <section id="reserva">
         <h2>Reserva ahora</h2>
         <a href="https://wa.me/573000000000?text=Hola,%20quiero%20hacer%20una%20reserva" class="btn-reservar" target="_blank">Reservar por WhatsApp</a>
         </section>

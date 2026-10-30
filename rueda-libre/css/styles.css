@@ -58,12 +58,10 @@ h2, h3, h4, h5, h6, legend {
 3. SECCIONES DE PORTADA (Hero / Altura en vh)
    ================================================================ */
 .portada {
-  min-height:  75vh;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: center;
-  text-align: center;
 }
 /* =================================================================
 4. NAVEGACION Y MENU
@@ -82,24 +80,21 @@ h2, h3, h4, h5, h6, legend {
   margin-right: 1.5rem;
 }
 #menu a {
-  color: var(--color-texto-secundario); /* Gris Asfalto para enlaces del menú */
+  color: var(--color-texto-secundario);
   text-decoration: none;
   transition: var(--color-acento) 0.2s ease;
 }
 
-/*solucion al conflicto: ID + etiqueta + clase */
 #menu a.activo {
-  color: var(--color-secundario); /* Color secundario puro para el enlace activo */
+  color: var(--color-secundario);
   font-weight: 600;
 }
 
-/*cuando el usuario pasa el mouse por encima del enlace, cambia el fondo a un gris claro para indicar interactividad*/
 #menu a:hover {
   color: var(--color-secundario);
   opacity: 0.8;
 }
 
-/*cuando el usuario navega con la tecla tab y se posa en el enlace*/
 #menu a:focus {
   outline: 2px solid var(--color-secundario);
   outline-offset:3px;
@@ -109,8 +104,7 @@ h2, h3, h4, h5, h6, legend {
 5. ENLACES GENERALES (Links fuera del menú)
    ================================================================ */
 a {
-  color: var(--color-secundario); /* Usa el color secundario (Verde Ruta) que cumple con el contraste */
-  font-weight: bold;
+  color: var(--color-secundario); 
   text-decoration: underline;
 }
 
@@ -123,8 +117,8 @@ a:focus {
 6.SECCIONES OSCURAS (Header, Footer)
    ================================================================ */
 header, footer {
-  background-color: var(--color-primario); /* Fondo con color primario */
-  color: var(--color-blanco);              /* Texto blanco (Excelente contraste de 15.97:1) */
+  background-color: var(--color-primario); 
+  color: var(--color-blanco);              
   padding: 1.5rem;
   border-radius: 8px;
 }
@@ -145,7 +139,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   background-color: var(--color-primario);
   color: var(--color-blanco);
@@ -155,10 +149,6 @@ header {
 }
 header.header-bloque {
   flex:1;
-  min-width: 200px;
-}
-header.header-bloque {
-  flex: 1;
   min-width: 200px;
 }
 
@@ -177,16 +167,17 @@ header.header-bloque a {
   list-style: none;
   padding: 0;
 }
-
+.portada img {
+  width: 100%;
+  height: auto;
+  max-height: 50vh;
+  object-fit: contain;
+}
 .contenedor-principal{
   max-width: 70rem;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
-  grid-template-columns: repeat (auto-fit, minmax(250px,1fr));
-  gap:1.5rem;
   padding:1.5rem;
 }
-
 .contenedor-tarjetas {
   display:flex;
   gap:1.5rem;
@@ -198,7 +189,6 @@ header.header-bloque a {
   gap: 2rem;
   margin-top: 2rem;
 }
-
 .tarjeta-flota {
   background-color: var(--color-blanco);
   border: 1px solid var(--color-texto-secundario);
@@ -208,7 +198,6 @@ header.header-bloque a {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .tarjeta-flota img {
   width: 100%;
   height: 160px;
@@ -216,25 +205,21 @@ header.header-bloque a {
   border-radius: 6px;
   margin-bottom: 1rem;
 }
-
 .tarjeta-flota h3 {
   color: var(--color-primario);
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
-
 .tarjeta-flota p {
   color: var(--color-texto-secundario);
   margin-bottom: 1rem;
   flex-grow: 1;
 }
-
 .tarjeta-flota .precio {
   font-weight: bold;
   color: var(--color-secundario);
   margin-bottom: 1rem;
 }
-
 .tarjeta-flota .btn-principal {
   text-align: center;
   text-decoration: none;
@@ -266,8 +251,6 @@ header.header-bloque a {
 .tarjeta-destacada {
   position: relative;
 }
-
-/* etiqueta "nuevo"*/
 .etiqueta-nuevo {
   position: absolute;
   top: 1rem;
@@ -281,7 +264,38 @@ header.header-bloque a {
   box-shadow: 0 2px 4px rgba(0,0,0,0.15);
   z-index:5;
 }
-
+.galeria-rutas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:2rem;
+  margin-top: 2rem;
+}
+.tarjeta-ruta {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-texto-secundario);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.tarjeta-ruta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+.tarjeta-ruta h3 {
+  color: var(--color-primario);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.contenedor-reservas{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap:2.5rem;
+  align-items: start;
+}
 footer {
   display: flex;
   flex-wrap: wrap;
@@ -295,7 +309,6 @@ footer {
   margin-top: 3rem;
   text-align:left;
 }
-
 footer .logo-footer {
   width: 120px;      
   height: auto;       
@@ -304,24 +317,20 @@ footer .logo-footer {
   padding: 5px;
   border-radius: 4px;
 }
-
 footer .footer-bloque {
   flex: 1;
   min-width: 220px;
 }
-
 footer .footer-bloque h3 {
   color: var(--color-blanco);
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
-
 footer .footer-bloque p {
   margin: 0;
   line-height: 1.5;
 }
-
 footer .footer-bloque a {
   color: var(--color-blanco);
   text-decoration: underline;
@@ -472,6 +481,24 @@ button[type="submit"],
 12. DISEÑO RESPONSIVE
    ================================================================ */
 @media(max-width: 768px) {
+  header {
+    margin:1rem;
+    width: calc(100%-2rem);
+    border-radius: 8px;
+
+  }
+  .portada {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center
+  }
+  .portada img {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+
+  }
   .contenedor-tarjetas {
     flex-direction: column;
   }
@@ -481,4 +508,19 @@ button[type="submit"],
     font-size: 0.75rem;
     padding: 0.2rem 0.6rem;
   }
+  table {
+  width: 100%;
+  table-layout: fixed;
+  margin: 2rem 0;
+}
+th, td {
+  padding: 0.4rem;
+  font-size: 0.8rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+}
+.contenedor-principal{
+  padding: 0.5rem;
 }
