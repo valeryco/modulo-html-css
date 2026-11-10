@@ -100,5 +100,22 @@ Este mapa define los roles de cada color en tu interfaz, aprovechando las combin
 
     Enlace (Links):
 
-        Sobre fondo Crema: Verde Ruta (con un ratio de 4.93:1, pasa el estándar para texto normal y funciona muy bien para destacar interacciones sin perder accesibilidad).    
+        Sobre fondo Crema: Verde Ruta (con un ratio de 4.93:1, pasa el estándar para texto normal y funciona muy bien para destacar interacciones sin perder accesibilidad).
 
+
+Bitácora de Desarrollo: Rueda Libre
+Como el ritmo del módulo era intenso, le estuve pidiendo a la IA que me guiara, me explicara los conceptos paso a paso y me ayudara a entender cómo enfocar cada mini reto sin enredarme.
+
+Semana 1: Estructura, semántica y estilos base
+Día 1 · El repositorio y la estructura HTML: Empecé configurando Git desde la terminal (git init, los commits y la conexión con GitHub). Aprendí cómo funciona la anatomía de una URL y monté las primeras tres páginas base de Rueda Libre usando la estructura clásica de HTML.
+
+Día 2 · Etiquetas semánticas y formulario: Le dimos significado al código con etiquetas semánticas (<header>, <nav>, <main>, <section>, <article>, <aside>, <footer>) para mejorar la accesibilidad. También armé el formulario de reservas aplicando validaciones nativas (required, type="email", type="date") y lo mandé de una vez a GitHub Pages.
+
+Día 3 · CSS, variables y Box Model: Aquí ya le puse los primeros estilos con una hoja externa (styles.css). Definí variables en :root con los colores corporativos y tipografías de Google Fonts, y usé box-sizing: border-box para controlar bien las cajas y los espaciados en rem. Con esto saqué la v1.0.
+
+Semana 2: Layouts responsivos con CSS propio y Bootstrap
+Día 4 · Flexbox, Grid y Mobile-First: El reto era que el sitio se adaptara a cualquier pantalla. Con ayuda de la IA repasé cómo usar Flexbox para alinear el menú y los elementos, Grid (repeat(auto-fit, minmax(...))) para organizar la flota de bicicletas, y media queries con un enfoque mobile-first.
+
+Día 5 · Introducción a Bootstrap 5: Para evaluar cómo agilizar las entregas en la agencia, probamos migrar la grilla a Bootstrap. Aprendí a usar el sistema de contenedores, filas y columnas (row, col-12 col-md-6) y a armar secciones completas tirando solo de clases utilitarias (py-5, fw-bold, d-flex).
+
+Día 6 · Componentes e Identidad Propia (v2.0): Para cerrar el proyecto, le integré el menú hamburguesa colapsable, cards con altura uniforme (h-100), alertas y modales (descargando el bundle de JS de Bootstrap). Como Bootstrap por defecto se veía muy genérico, sobrescribí las variables --bs-primary en mi CSS para devolverle los colores y la identidad de marca a Rueda Libre
